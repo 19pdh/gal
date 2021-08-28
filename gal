@@ -49,7 +49,7 @@ EOF
 [ -f $OUTPUT/photo_list ] && echo "Replacing existing photo_list" && rm $OUTPUT/photo_list
 
 for ext in $EXTENSIONS; do
-  for f in `find $PHOTOS -name "*.$ext"`; do
+  for f in `find $PHOTOS -name "*.$ext" | sort -n`; do
     filename=$(basename $f)
 
     ## Add to index.html
